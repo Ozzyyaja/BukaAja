@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Maafin ya kak Stepanii</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #fce4ec;
+        }
+
+        #marco {
+            border: 10px solid pink;
+            width: 90%;
+            height: 60%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #fff0f5;
+            text-align: center;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        h1 {
+            font-size: 1.5rem;
+            color: #d81b60;
+        }
+
+        #botones {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+
+        .boton {
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: 2px solid #d81b60;
+            background-color: #f8bbd0;
+            color: #880e4f;
+            transition: background-color 0.3s ease;
+            margin: 10px 0;
+        }
+
+        .boton:hover {
+            background-color: #f48fb1;
+        }
+
+        #no {
+            position: absolute;
+        }
+
+        img {
+            width: 150px;
+            height: auto;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="marco">
+        <img src="bubu-yier.gif" alt="Imagen" id="imagen">
+        <h1>Maaf ya kak Stepanii</h1>
+        <div id="botones">
+            <button id="si" class="boton">Iya di maaf</button>
+            <button id="no" class="boton">Tidak akan Di Maaf</button>
+        </div>
+    </div>
+
+    <script>
+        const marco = document.getElementById('marco');
+        const siBtn = document.getElementById('si');
+        const noBtn = document.getElementById('no');
+
+        siBtn.addEventListener('click', () => {
+            marco.innerHTML = `
+                <img src="laugh-bashful.gif" alt="Imagen de agradecimiento">
+                <h1>Terima Kasih Ya kak !! Btw Boleh Minta Nomor WhatsAppnya Ga 💗</h1>`;
+        });
+
+        noBtn.addEventListener('click', () => {
+            const randomX = Math.random() * (window.innerWidth - noBtn.offsetWidth);
+            const randomY = Math.random() * (window.innerHeight - noBtn.offsetHeight);
+            noBtn.style.left = `${randomX}px`;
+            noBtn.style.top = `${randomY}px`;
+        });
+    </script>
+
+</body>
+</html>
